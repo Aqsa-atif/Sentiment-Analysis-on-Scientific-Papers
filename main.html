@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Sentiment Analysis on Research Paper</title>
+	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+    <style>
+	
+      * {
+        font-family: 'Roboto', sans-serif;
+      }
+      body
+	  {background: linear-gradient(to bottom right, #00FFFF, #66CDAA, #FFD700, #FF8C00, #FF00FF);
+	  }
+	  input[type="file"] {
+		  color: black;
+		  height: 30px;
+		  background-color: lightgray;
+		  width: 400px;
+		  padding-top: 0px;
+		  font-size:20px;
+		  margin-top: 190px;
+		  border: 3px solid #45A29C; /* add border color */
+		}
+
+      #Upload_file {
+        background-color: #0B0C10;
+		border:3px solid;
+		border-color:#ff8800;
+        font-size: 25px;
+		font-family:TimesNewRoman;
+        color: white;
+        height:40px;
+		padding-left:10px;
+		padding-right:10px;
+        margin: 0 auto;
+        display: block;
+        margin-top: 10px;
+      }
+	  #Upload_file:hover{
+	  color:#ff8800;
+	  font-weight: bold 3px;
+	  }
+	  #Upload_file:active{
+	  background-color:#ff8800;
+	  color:white;
+	  font-weight: 3px;
+	  }
+      #sa-container {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+		padding-top:0px;
+        margin-right: 40px;
+        margin-bottom: 40px;
+      }
+      #sa {
+		  display: block;
+		  background-color: #0B0C10;
+		  border: 3px solid;
+		  border-color: #2fff00;
+		  width: 300px;
+		  color: white;
+		  height: 26px;
+		  font-size: 21px;
+		  font-family: TimesNewRoman;
+		  padding-top:11px;
+		  padding-bottom:18px;
+		  text-align: center;
+		  margin-top:270px;
+		  margin-bottom:30px;
+		  margin-left:1570px;
+		  position: relative;
+		  text-decoration: none;
+		  border-radius: 10px;
+		  line-height: 26px;
+		  padding-bottom:5px;
+			}
+
+
+      h1 {
+        color: #0B0C10;
+        text-align: center;
+		font-size:100px;
+		padding-top:40px;
+        margin-top: 0;
+		padding-bottom:0px;
+		margin-bottom:0px;
+      }
+      #container {
+		
+		background-color: rgba(0, 0, 0, 0);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+	  #sa:hover {
+	  color:#2fff00;
+	}
+	#sa:active {
+	  background-color:#2fff00;
+	  color:white;
+	  font-weight:bold 3px;
+	}
+    </style>
+  </head>
+  <body>
+     <script>
+      {% if message %}
+        alert("{{ message }}");
+      {% endif %}
+    </script>
+	<div>
+      <h1>Sentiment Analysis </h1>
+	  <p style="color:#0B0C10;font-size:60px;margin-top:15px;text-align:center;padding-top:0px;padding-bottom:5px;margin-bottom:0px;">on Research Papers</p>
+	  <p style="font-size:20px;color:#0B0C10;text-align:center;padding-top:0px;margin-top:30px;"><i>by Aqsa Abu Bakar</i></p>
+	  </div>
+    <div id="container">
+      <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".pdf" style="color:black;,height:50px;background-color:lightgray;width:400px;padding-top:0px;margin-top:190px;">
+        <br><br>
+        <input id="Upload_file" type="submit" value="Upload and Convert">
+      
+    </div>
+      <a id="sa" href="/list" target="_blank">NEXT</a>
+	</form>
+  </body>
+</html>

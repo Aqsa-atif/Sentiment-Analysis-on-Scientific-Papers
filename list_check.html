@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>List and Questionnaire</title>
+    <style>
+      * {
+        font-family: TimesNewRoman;
+      }
+
+      /* Add styles here */
+      body {
+         background: linear-gradient(to bottom, #86C232,  #8E44AD);
+         background-attachment: fixed; /* fix the background */
+          background-repeat: no-repeat; /* prevent repeating the background */
+      }
+
+      
+
+      h1 {
+        color:#86C232;
+        background-color: #0B0C10;
+        text-align: center;
+        padding: 30px;
+      }
+
+
+      ul {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      li {
+        color:white;
+        margin-bottom: 10px;
+        background-color: #474b4f;
+        font-size:32px;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+      }
+
+      input[type="button"] {
+        background-color: #222629;
+        color:white;
+        font-size:25px;
+        height:55px;
+        width:95px;
+        border: 3px solid #2fff00;
+        padding: 10px 20px;
+        margin-right: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      input[type="button"]:hover {
+        background-color: #2fff00;
+      }
+
+      .button-container {
+        text-align: center;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      {% if message %}
+      alert("{{ message }}");
+      {% endif %}
+    </script>
+    <h1>List of Elements</h1>
+    <ul>
+      {% for item in data %}
+      <li>{{ item }}</li>
+      {% endfor %}
+    </ul>
+    <h1>Is the list correct?</h1>
+    <div class="button-container">
+      <form id="correct-form" action="/correct" method="get">
+        <input type="hidden" name="formaction" value="/correct">
+        <input type="button" value="Yes" onclick="handleYes()">
+        <input type="button" value="No" onclick="handleNo()">
+      </form>
+    </div>
+    <script>
+      function handleYes() {
+        document.querySelector('input[name="formaction"]').value = "/senti";
+        document.getElementById("correct-form").setAttribute("action", "/senti");
+        document.getElementById("correct-form").submit();
+      }
+
+      function handleNo() {
+        document.getElementById("correct-form").setAttribute("action", "/correct");
+        document.getElementById("correct-form").submit();
+      }
+    </script>
+  </body>
+</html>

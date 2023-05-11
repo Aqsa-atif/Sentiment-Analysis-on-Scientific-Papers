@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sentiment Analysis</title>
+    <style>
+    
+      /* Add styles here */
+      * {
+        font-family: TimesNewRoman;
+      }
+      body {
+        background:linear-gradient(to bottom, #FF8C00 ,#ff00a6);
+      }
+      h1 {
+        color: #FF8C00;
+        background-color: #0B0C10;
+        
+        text-align: center;
+        padding: 10px;
+      }
+      button {
+        display: block;
+        width: 50%;
+        height: 60px;
+        margin-bottom: 10px;
+        font-size:1.575em;
+        border: none;
+        padding: 5px 5px;
+        padding-bottom:5px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-bottom: 10px;
+        background-color: #fff;
+        font-size:28px;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0px 2px 5px rgba(0,0,0,0.3);
+      }
+      button:hover {
+          background-color:#6be2ed;
+          color: black;
+    }
+    #below{
+          background-color: #000;
+          color: #fff;
+          padding: 10px;
+        }
+    #pqr {
+          background-color: #000;
+          color: #fff;
+          padding: 10px;
+        }
+    #pqr:hover {
+          background-color: #fff;
+          color: #000;
+        }
+        
+        #below:hover {
+          background-color: #fff;
+          color: #000;
+        }
+
+
+      #buttonz
+      {  display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+      p {
+        margin: 10px;
+      }
+      .charc{
+        color:#B300FF; 
+        font-size:30px;}
+      .positive {
+        color:#39FF14;
+        text-align:center;
+        font-size:32px;
+      }
+      .negative {
+        color: # #FF073A;
+        text-align:center;
+        font-size:32px;
+      }
+      .neutral {
+        color: #000;
+        text-align:center;
+        font-size:32px;
+      }
+      .maroon {
+        background-color: #00FFFF;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="height: 1500px;">
+        <h1>Select an Element</h1>
+        <form method="POST" id="buttonz">
+            {% for element in elements %}
+            <button name="element" value="{{ element }}">{{ element }}</button>
+            {% endfor %}
+        </form>
+        {% if selected_element %}
+        <h1>{{ selected_element }}</h1>
+        <div id="below">
+            <p style="font-size: 25px; text-align: justify;">{{ Dict[selected_element] }}</p>
+            {% if sentiment > 0 %}
+            <p class="positive"><b>{{ selected_element }}</b> has a Positive sentiment with polarity of <b>{{ sentiment }}</b> and a subjectivity of <b>{{ subjectivity }}.</b></p>
+            {% elif sentiment < 0 %}
+            <p class="negative"><b>{{ selected_element }}</b> has a Negative sentiment with polarity of <b>{{ sentiment }}</b> and a subjectivity of <b>{{ subjectivity }}.</b></p>
+            {% else %}
+            <p class="neutral"><b>{{ selected_element }}</b> has a Neutral sentiment with polarity of <b>{{ sentiment }}</b> and a subjectivity of <b>{{ subjectivity }}.</b></p>
+            {% endif %}
+            <p class="charc">The Text has <b>{{ pos }}</b> proportion of positive words & <b>{{ neg }}</b> proportion of negative words & <b>{{ neu }}</b> proportion of neutral words</p>
+        {% endif %}
+        </div>
+    </div>
+    <br>
+    {% if wordcloud and graph %}
+  <h1 style="margin-top:200px;">Word Cloud and Top 10 Words:</h1>
+  <div style="display: flex;">
+    <div style="flex-basis: 50%;">
+          <img src="data:image/png;base64,{{ wordcloud }}" alt="Word Cloud">
+        </div>
+        <div style="flex-basis: 50%;">
+          <img style="margin-top:170px;" src="data:image/png;base64,{{ graph }}" alt="Top 10 Words">
+        </div>
+      </div>
+    {% endif %}
+    <br><br><br>
+    <h1>Summary</h1>
+    <div id="pqr">
+    <p style="font-size: 25px; text-align: justify;">{{summary}}</p>
+</div>
+</body>
+</html>
