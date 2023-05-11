@@ -12,8 +12,6 @@ https://youtu.be/vQEdkuKoAuA
 
 ![image](https://user-images.githubusercontent.com/88885089/235350154-12df599a-0ed5-47ce-9d1a-f622d909ae3b.png)
 
-![image](https://user-images.githubusercontent.com/88885089/235349844-af8558cf-64c2-411f-ae33-6e5214425fbd.png)
-
 ## Headings Extracted
 
 ![image](https://github.com/Aqsa-atif/Sentiment-Analysis-on-Scientific-Papers/assets/88885089/c3995e79-90d6-46de-bc8e-3caeefb38b37)
