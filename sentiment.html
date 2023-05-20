@@ -90,6 +90,12 @@
       .maroon {
         background-color: #00FFFF;
       }
+      .neg_sen{color:red;
+          font-size:34px;
+      }
+      .pos_sen{color:green;
+          font-size:34px;
+      }
     </style>
   </head>
   <body>
@@ -101,6 +107,9 @@
             {% endfor %}
         </form>
         {% if selected_element %}
+        <div style="display:flex;">
+         <div style="flex-basis: 50%;paddig-left:150px;"><center><img src="data:image/png;base64,{{pol_image }}" alt="SAverage Polarity"></center></div>
+         <div style="flex-basis: 50%;paddig-left:150px;"><center><img src="data:image/png;base64,{{ sub_image }}" alt="Average Subjectivity "></center></div></div>
         <h1>{{ selected_element }}</h1>
         <div id="below">
             <p style="font-size: 25px; text-align: justify;">{{ Dict[selected_element] }}</p>
@@ -112,22 +121,28 @@
             <p class="neutral"><b>{{ selected_element }}</b> has a Neutral sentiment with polarity of <b>{{ sentiment }}</b> and a subjectivity of <b>{{ subjectivity }}.</b></p>
             {% endif %}
             <p class="charc">The Text has <b>{{ pos }}</b> proportion of positive words & <b>{{ neg }}</b> proportion of negative words & <b>{{ neu }}</b> proportion of neutral words</p>
+            <p class="pos_sen">Most Positive sentence in the analyzed text is {{ps}}</p>
+        <p class="neg_sen">Most Negative sentence in the analyzed text is {{ns}}</p>
         {% endif %}
+        
         </div>
     </div>
     <br>
     {% if wordcloud and graph %}
-  <h1 style="margin-top:200px;">Word Cloud and Top 10 Words:</h1>
+  <h1 style="margin-top:500px;">Word Cloud and Top 10 Words:</h1>
   <div style="display: flex;">
     <div style="flex-basis: 50%;">
-          <img src="data:image/png;base64,{{ wordcloud }}" alt="Word Cloud">
+          <center><img src="data:image/png;base64,{{ wordcloud }}" alt="Word Cloud"></center>
         </div>
         <div style="flex-basis: 50%;">
-          <img style="margin-top:170px;" src="data:image/png;base64,{{ graph }}" alt="Top 10 Words">
+          <center><img style="margin-top:170px;" src="data:image/png;base64,{{ graph }}" alt="Top 10 Words"></center>
         </div>
       </div>
     {% endif %}
     <br><br><br>
+    <div style="text-align:center;">
+          <img src="data:image/png;base64,{{ count }}" alt="Sentence count">
+        </div>
     <h1>Summary</h1>
     <div id="pqr">
     <p style="font-size: 25px; text-align: justify;">{{summary}}</p>
