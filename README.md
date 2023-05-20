@@ -30,6 +30,20 @@ https://youtu.be/vQEdkuKoAuA
 
 ![image](https://github.com/Aqsa-atif/Sentiment-Analysis-on-Scientific-Papers/assets/88885089/65be74aa-5d47-48d2-a8bc-47f006980efa)
 
+## Number of sentences classified
+
+![image](https://github.com/Aqsa-atif/Sentiment-Analysis-on-Scientific-Papers/assets/88885089/37726285-88c3-4314-9631-51f1df56f402)
+
+## Summary of coressponding text
+
+![image](https://github.com/Aqsa-atif/Sentiment-Analysis-on-Scientific-Papers/assets/88885089/3c5ee6e4-dafd-4768-ba72-22782c57d10c)
+
+# Average polarity and subjectivity of Top 5 confrences 
+
+![image](https://github.com/Aqsa-atif/Sentiment-Analysis-on-Scientific-Papers/assets/88885089/78564ab1-88da-421a-9292-82eab611c1cb)
+
+![image](https://github.com/Aqsa-atif/Sentiment-Analysis-on-Scientific-Papers/assets/88885089/24a8d538-63e9-4fbc-98a5-0129f22a641a)
+
 # Flowchart
 
 ## Overview of flowchart
@@ -39,4 +53,3 @@ https://youtu.be/vQEdkuKoAuA
 ## Detailed flowchart
 
 <img width="1215" alt="llm" src="https://user-images.githubusercontent.com/88885089/235351926-3ab9d3b0-5046-45ad-a5b0-5627909f85f4.png">
-
